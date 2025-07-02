@@ -13,6 +13,11 @@ app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static('uploads')); // to serve uploaded files
 
+app.get('/', (req, res) => {
+  res.send('✅ Document Signature API is running.');
+});
+
+
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/docs', documentRoutes);
